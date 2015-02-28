@@ -17,4 +17,13 @@ class Two$Test extends FlatSpec with Matchers {
 
   }
 
+  "isSorted" should "determine if an array is sorted" in {
+
+    def ordered[A](a: A, b: A):Boolean = true
+    def notOrdered[A](a: A, b: A):Boolean = false
+
+    Two.isSorted(Array("One", "Two"), ordered) should be (true)
+    Two.isSorted(Array("Two", "One"), notOrdered) should be (false)
+
+  }
 }
