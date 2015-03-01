@@ -21,7 +21,6 @@ object Two {
       else if (!ordered(as(n), as(n + 1))) false
       else loop(n + 1)
     }
-
     loop(0)
   }
 
