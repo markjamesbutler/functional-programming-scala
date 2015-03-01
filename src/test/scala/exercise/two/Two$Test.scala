@@ -26,4 +26,5 @@ class Two$Test extends FlatSpec with Matchers {
     Two.isSorted(Array("Two", "One"), notOrdered) should be (false)
 
   }
+
 }

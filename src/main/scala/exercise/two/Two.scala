@@ -24,4 +24,13 @@ object Two {
 
     loop(0)
   }
+
+  def curry[A, B, C](f: (A, B) => C): A => (B => C) = {
+    (a: A) => f(a, _)
+  }
+
+  def uncurry[A, B, C](f: A => B => C): (A, B) => C = {
+
+  }
+
 }
