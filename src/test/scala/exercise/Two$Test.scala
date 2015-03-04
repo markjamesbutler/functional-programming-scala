@@ -1,6 +1,5 @@
 package exercise
 
-import Two
 import org.scalatest.{FlatSpec, Matchers}
 
 class Two$Test extends FlatSpec with Matchers {
