@@ -24,6 +24,13 @@ object Three {
         case Nil => List()
       }
     }
+
+    def setHead[A](a: List[A], head: A): List[A] = {
+      a match {
+        case Cons(h, t) => Cons(head, t)
+        case Nil => List(head)
+      }
+    }
   }
   
   val x = List(1, 2, 3, 4, 5) match {
