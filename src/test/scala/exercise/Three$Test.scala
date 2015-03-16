@@ -10,4 +10,9 @@ class Three$Test extends FlatSpec with Matchers {
 
   }
 
+  "tail" should "return tail of list" in {
+
+    Three.List.tail(Three.List(1,2,3)) should be (Three.List(2,3))
+  }
+
 }

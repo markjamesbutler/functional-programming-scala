@@ -17,7 +17,12 @@ object Three {
       case Nil => 0
       case Cons(x, xs) => x + sum(xs)
     }
-    
+
+    def tail[A](a: List[A]): List[A] = {
+      a match {
+        case Cons(h, t) => t
+      }
+    }
   }
   
   val x = List(1, 2, 3, 4, 5) match {
@@ -28,5 +33,4 @@ object Three {
     case _ => 101
     
   }
-  
 }
