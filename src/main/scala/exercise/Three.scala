@@ -21,6 +21,7 @@ object Three {
     def tail[A](a: List[A]): List[A] = {
       a match {
         case Cons(h, t) => t
+        case Nil => List()
       }
     }
   }
