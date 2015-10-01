@@ -37,5 +37,9 @@ object Two {
   val f = (x: Double) => math.Pi / 2 -x 
   
   val cos = f andThen math.sin
-  
+
+  // currying example
+  def multiply(m: Int)(n: Int): Int = m * n
+
+  val timesTwo = multiply(2) _
 }

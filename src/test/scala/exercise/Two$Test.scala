@@ -27,4 +27,8 @@ class Two$Test extends FlatSpec with Matchers {
 
   }
 
+  "calling a curried function" should "return correct value" in {
+    Two.timesTwo(3) should be (6)
+  }
+
 }
