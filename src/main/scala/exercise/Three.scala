@@ -40,5 +40,5 @@ object Three {
     case Cons(h, t) => h + List.sum(t)
     case _ => 101
     
-  }
+    }
 }
