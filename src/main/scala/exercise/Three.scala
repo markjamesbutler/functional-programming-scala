@@ -25,11 +25,8 @@ object Three {
       }
     }
 
-    def setHead[A](a: List[A], head: A): List[A] = {
-      a match {
-        case Cons(h, t) => Cons(head, t)
-        case Nil => List(head)
-      }
+    def setHead[A](a: List[A], head: A) = {
+      List(head, tail(a))
     }
   }
   
