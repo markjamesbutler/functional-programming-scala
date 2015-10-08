@@ -23,4 +23,10 @@ class Three$Test extends FlatSpec with Matchers {
     List.setHead(List(2,3), 1) should be (List(1,Cons(3, Nil)))
   }
 
+  "drop" should "remove elements from a list" in {
+    List.drop(List(), 1) should be (List())
+    List.drop(List(1),1) should be (List())
+    List.drop(List(1, Cons(2, Nil)), 1) should be (Cons(Cons(2,Nil),Nil))
+  }
+
 }

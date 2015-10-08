@@ -25,6 +25,14 @@ object Three {
       }
     }
 
+    def drop[A](l: List[A], n: Int): List[A] = {
+      def go(m: List[A], acc: Int): List[A] = {
+        if (n == acc) m
+        else go(tail(m), acc + 1)
+      }
+      go(l, 0)
+    }
+
     def setHead[A](a: List[A], head: A) = {
       List(head, tail(a))
     }
