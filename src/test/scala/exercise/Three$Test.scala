@@ -29,4 +29,9 @@ class Three$Test extends FlatSpec with Matchers {
     List.drop(List(1, Cons(2, Nil)), 1) should be (Cons(Cons(2,Nil),Nil))
   }
 
+  "dropWhile" should "remove elements from a list" in {
+    def predicate[Integer](a: Integer): Boolean = a != 4
+    List.dropWhile(List(1,2,3,4,5,6,7,8,9,10), predicate) should be(List(4,5,6,7,8,9,10))
+  }
+
 }

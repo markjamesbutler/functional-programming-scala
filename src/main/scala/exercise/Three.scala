@@ -36,6 +36,13 @@ object Three {
     def setHead[A](a: List[A], head: A) = {
       List(head, tail(a))
     }
+
+    def dropWhile[A](l: List[A], f: A => Boolean): List[A] = {
+      l match {
+        case Cons(h, t) if f(h) => dropWhile(drop(t, 0), f)
+        case _ => l
+      }
+    }
   }
   
   val x = List(1, 2, 3, 4, 5) match {
@@ -46,4 +53,5 @@ object Three {
     case _ => 101
     
     }
+
 }
