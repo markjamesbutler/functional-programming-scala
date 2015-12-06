@@ -28,6 +28,10 @@ object Three {
       foldLeft(ints, 1)((b,a) => b * a)
     }
 
+    def lengthFoldLeft(ints: List[Int]): Int = {
+      foldLeft(ints, 0)((b,a) => b + 1)
+    }
+
     def tail[A](a: List[A]): List[A] = {
       a match {
         case Cons(h, t) => t
