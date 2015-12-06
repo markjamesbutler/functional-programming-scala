@@ -46,4 +46,9 @@ class Three$Test extends FlatSpec with Matchers {
   "sumFoldRight" should "compute correct sum" in {
     List.sumFoldLeft(List(1,2,3)) should be (6)
   }
+
+  "productFoldLeft" should "compute correct sum" in {
+    List.productFoldLeft(List(1,2,3,4)) should be (24)
+  }
+
 }

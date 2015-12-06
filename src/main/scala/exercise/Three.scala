@@ -21,9 +21,11 @@ object Three {
     }
 
     def sumFoldLeft(ints: List[Int]): Int = {
-      //def foldLeft[A, B](as: List[A], z: B)(f: (B, A) => B): B = {
       foldLeft(ints, 0)((b,a) => b + a)
+    }
 
+    def productFoldLeft(ints: List[Int]): Int = {
+      foldLeft(ints, 1)((b,a) => b * a)
     }
 
     def tail[A](a: List[A]): List[A] = {
