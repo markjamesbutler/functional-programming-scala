@@ -34,12 +34,16 @@ class Three$Test extends FlatSpec with Matchers {
     List.dropWhile(List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), predicate) should be(List(4, 5, 6, 7, 8, 9, 10))
   }
 
-  "foldRight Nil and Cons" should "something" in {
+  "foldRight Nil and Cons" should "return same list" in {
     List.foldRight(List(1,2,3), Nil:List[Int])(Cons(_,_)) should be (Cons(1,Cons(2,Cons(3,Nil))))
   }
 
   "length" should "compute length of list " in {
     List.length(List()) should be (0)
     List.length(List(1,2,3)) should be (3)
+  }
+
+  "sumFoldRight" should "compute correct sum" in {
+    List.sumFoldLeft(List(1,2,3)) should be (6)
   }
 }

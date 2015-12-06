@@ -1,5 +1,7 @@
 package exercise
 
+import scala.annotation.tailrec
+
 object Three {
 
   sealed trait List[+A]
@@ -16,6 +18,12 @@ object Three {
     def sum(ints: List[Int]): Int = ints match {
       case Nil => 0
       case Cons(x, xs) => x + sum(xs)
+    }
+
+    def sumFoldLeft(ints: List[Int]): Int = {
+      //def foldLeft[A, B](as: List[A], z: B)(f: (B, A) => B): B = {
+      foldLeft(ints, 0)((b,a) => b + a)
+
     }
 
     def tail[A](a: List[A]): List[A] = {
@@ -49,6 +57,14 @@ object Three {
         case Nil => z
         case Cons(x, xs) => f(x, foldRight(xs, z)(f))
       }
+    }
+
+    @tailrec
+    def foldLeft[A, B](as: List[A], z: B)(f: (B, A) => B): B = {
+      as match {
+          case Nil => z
+          case Cons(x, xs) => foldLeft(xs, f(z, x))(f)
+        }
     }
 
     def length[A](as: List[A]): Int =
