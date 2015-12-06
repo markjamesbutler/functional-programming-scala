@@ -19,7 +19,7 @@ class Three$Test extends FlatSpec with Matchers {
 
   "setHead" should "set head of list" in {
 
-    List.setHead(List(), 1) should be(List(1, Nil)) 
+    List.setHead(List(), 1) should be(List(1, Nil))
     List.setHead(List(2, 3), 1) should be(List(1, Cons(3, Nil)))
   }
 
@@ -36,5 +36,10 @@ class Three$Test extends FlatSpec with Matchers {
 
   "foldRight Nil and Cons" should "something" in {
     List.foldRight(List(1,2,3), Nil:List[Int])(Cons(_,_)) should be (Cons(1,Cons(2,Cons(3,Nil))))
+  }
+
+  "length" should "compute length of list " in {
+    List.length(List()) should be (0)
+    List.length(List(1,2,3)) should be (3)
   }
 }

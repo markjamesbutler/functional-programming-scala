@@ -50,6 +50,9 @@ object Three {
         case Cons(x, xs) => f(x, foldRight(xs, z)(f))
       }
     }
+
+    def length[A](as: List[A]): Int =
+      foldRight(as, 0)((_, n) => n + 1)
   }
 
 
