@@ -32,6 +32,10 @@ object Three {
       foldLeft(ints, 0)((b,a) => b + 1)
     }
 
+    def reverse[A](a: List[A]): List[A] = {
+      foldLeft(a, List[A]())((h, t) => Cons(t, h))
+    }
+
     def tail[A](a: List[A]): List[A] = {
       a match {
         case Cons(h, t) => t

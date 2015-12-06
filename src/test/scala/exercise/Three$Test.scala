@@ -55,4 +55,8 @@ class Three$Test extends FlatSpec with Matchers {
     List.lengthFoldLeft(List(1,2,3,4)) should be (4)
   }
 
+  "reverse" should "reverse list" in {
+    List.reverse(List(1,2,3)) should be (Cons(3, Cons(2, Cons(1, Nil))))
+  }
+
 }
