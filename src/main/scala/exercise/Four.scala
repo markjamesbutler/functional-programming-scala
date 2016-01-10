@@ -12,10 +12,8 @@ object Four {
         case _ => None
       }
 
-    def flatMap[B](f: A=> Option[B]): Option[B] =
-    this match  {
-      case Some(b) => f(b)
-      case _ => None
+    def flatMap[B](f: A=> Option[B]): Option[B] = {
+      this.map(f(_)).getOrElse(None)
     }
 
     def getOrElse[B >: A](default: => B): B = {
@@ -30,10 +28,10 @@ object Four {
     }
 
     def filter(f: A => Boolean): Option[A] = {
-      this match {
-        case Some(a) if f(a) => this
-        case _ => None
-      }
+      this.map{ a =>
+        if(f(a)) this
+        else None
+      }.getOrElse(None)
     }
   }
 
