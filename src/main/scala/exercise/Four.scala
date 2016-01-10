@@ -1,8 +1,7 @@
 package exercise
 
-class Four {
+object Four {
 
-  sealed trait Option[+A]
   case class Some[+A](get: A) extends Option[A]
   case object None extends Option[Nothing]
 
@@ -26,14 +25,14 @@ class Four {
       }
 
     }
-    def orElse[B >: A](ob: => Option[B]) = {
+    def orElse[B >: A](ob: => Option[B]): Option[B] = {
       this map (Some(_)) getOrElse(ob)
     }
 
     def filter(f: A => Boolean): Option[A] = {
       this match {
         case Some(a) if f(a) => this
-        case None => None 
+        case _ => None
       }
     }
   }
